@@ -28,6 +28,11 @@ export default {
       type: 'captionImage'
     },
     {
+      title: '3D Model',
+      name: 'model',
+      type: 'file'
+    },
+    {
       title: 'Description',
       name: 'description',
       type: 'richText'

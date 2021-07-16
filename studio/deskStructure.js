@@ -11,7 +11,7 @@ import {
 } from 'react-icons/gr'
 
 export const getDefaultDocumentNode = (props) => {
-  if (props.schemaType === 'post') {
+  if (props.schemaType === 'product') {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
   return S.document();
@@ -30,10 +30,10 @@ export default () =>
             .title('Field level translations')
             .items(
               [
-                S.documentTypeListItem('article')
-                  .icon(ArticleIcon),
-                S.documentTypeListItem('author')
-                  .icon(AuthorIcon),
+                // S.documentTypeListItem('article')
+                //   .icon(ArticleIcon),
+                // S.documentTypeListItem('author')
+                //   .icon(AuthorIcon),
               ]
             )
         ),
@@ -46,20 +46,74 @@ export default () =>
             .title('Document level translations')
             .items([
               S.listItem()
-                .title('Post')
-                .id('post-docs')
-                .icon(PostIcon)
-                .schemaType('post')
+                .title('Product')
+                .id('product-docs')
+                // .icon(PostIcon)
+                .schemaType('product')
                 .child(
                   S.documentList()
-                    .id('post')
-                    .title('Posts')
+                    .id('product')
+                    .title('Product')
                     // Use a GROQ filter to get documents.
-                    .filter('_type == "post" && (!defined(_lang) || _lang == $baseLang)')
+                    .filter('_type == "product" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })
                     .canHandleIntent((_name, params, _context) => {
                       // Assume we can handle all intents (actions) regarding post documents
-                      return params.type === 'post'
+                      return params.type === 'product'
+                    })
+                ),
+
+                S.listItem()
+                .title('About')
+                .id('about-docs')
+                // .icon(PostIcon)
+                .schemaType('about')
+                .child(
+                  S.documentList()
+                    .id('about')
+                    .title('About')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "about" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'about'
+                    })
+                ),
+
+                S.listItem()
+                .title('News')
+                .id('news-docs')
+                // .icon(PostIcon)
+                .schemaType('news')
+                .child(
+                  S.documentList()
+                    .id('news')
+                    .title('News')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "news" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'news'
+                    })
+                ),
+
+                S.listItem()
+                .title('Service')
+                .id('service-docs')
+                // .icon(PostIcon)
+                .schemaType('service')
+                .child(
+                  S.documentList()
+                    .id('service')
+                    .title('Service')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "service" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'service'
                     })
                 )
             ]
