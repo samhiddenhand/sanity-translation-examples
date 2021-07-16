@@ -42,7 +42,13 @@ export default {
       title: 'Specifications',
       name: 'specifications',
       type: 'richText'
-    }
+    },
+    {
+      name: 'downloads',
+      title: 'Product Files For Download',
+      type: 'array',
+      of: [{ type: 'file' }]
+     },
   ],
   preview: {
     select: {
