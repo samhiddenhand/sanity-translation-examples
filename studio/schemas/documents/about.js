@@ -1,8 +1,8 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Post',
-  name: 'post',
+  title: 'About',
+  name: 'about',
   type: 'document',
   // The next property enables full-document translation for this document
   // via the sanity-intl plugin. You can of course modify this object should you
@@ -25,14 +25,11 @@ export default {
     {
       title: 'Image',
       name: 'image',
-      type: 'captionImage',
-      options: {
-        hotspot: true
-      },
+      type: 'captionImage'
     },
     {
-      title: 'Body',
-      name: 'body',
+      title: 'Description',
+      name: 'description',
       type: 'richText'
     }
   ],

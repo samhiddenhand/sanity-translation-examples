@@ -1,9 +1,8 @@
 // The languages you want to support.
 // They need 'id' and 'title'
 export const languages = [
-  { name: 'en_GB', title: 'English (UK)' },
-  { name: 'no', title: 'Norwegian' },
-  { name: 'es', title: 'Spanish' },
+  { name: 'en_US', title: 'English (US)' },
+  { name: 'srp', title: 'Serbian' },
   { name: 'fr', title: 'French' },
 ];
 
