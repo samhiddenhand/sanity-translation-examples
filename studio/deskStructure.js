@@ -21,24 +21,24 @@ export default () =>
   S.list()
     .title('Content')
     .items([
+      // S.listItem()
+      //   .title('Field level')
+      //   .icon(FieldIcon)
+      //   .child(
+      //     S.list()
+      //       .id('field-level')
+      //       .title('Field level translations')
+      //       .items(
+      //         [
+      //           // S.documentTypeListItem('article')
+      //           //   .icon(ArticleIcon),
+      //           // S.documentTypeListItem('author')
+      //           //   .icon(AuthorIcon),
+      //         ]
+      //       )
+      //   ),
       S.listItem()
-        .title('Field level')
-        .icon(FieldIcon)
-        .child(
-          S.list()
-            .id('field-level')
-            .title('Field level translations')
-            .items(
-              [
-                // S.documentTypeListItem('article')
-                //   .icon(ArticleIcon),
-                // S.documentTypeListItem('author')
-                //   .icon(AuthorIcon),
-              ]
-            )
-        ),
-      S.listItem()
-        .title('Document level')
+        .title('Site Documents')
         .icon(DocumentIcon)
         .child(
           S.list()
