@@ -8,6 +8,8 @@ import about from './documents/about'
 import service from './documents/service'
 import news from './documents/news'
 import product from './documents/product'
+import productCategory from './documents/product_category'
+import equipmentType from './documents/equipment_type'
 import { translateFields } from './fieldTranslation'
 
 export default createSchema({
@@ -33,6 +35,8 @@ export default createSchema({
     // not be changed.
     .concat(translateFields([
       product,
+      productCategory,
+      equipmentType,
       news,
       about,
       service

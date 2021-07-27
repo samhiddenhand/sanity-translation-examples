@@ -23,6 +23,17 @@ export default {
       },
     },
     {
+      title: 'Product Category',
+      name: "productCategory",
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [
+          { type: 'productCategory' }
+        ]
+      }]
+    },
+    {
       title: 'Image',
       name: 'image',
       type: 'captionImage'
@@ -50,10 +61,10 @@ export default {
       of: [{ type: 'file' }]
      },
   ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'image'
-    }
-  }
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     media: 'image'
+  //   }
+  // }
 }

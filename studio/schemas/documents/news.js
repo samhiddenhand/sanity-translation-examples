@@ -23,6 +23,11 @@ export default {
       },
     },
     {
+      title: 'Date',
+      name: 'issueDate',
+      type: 'date'
+    },
+    {
       title: 'Image',
       name: 'image',
       type: 'captionImage'
@@ -33,10 +38,10 @@ export default {
       type: 'richText'
     }
   ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'image'
-    }
-  }
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     media: 'image'
+  //   }
+  // }
 }

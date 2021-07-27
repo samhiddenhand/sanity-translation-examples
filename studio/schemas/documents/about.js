@@ -33,10 +33,10 @@ export default {
       type: 'richText'
     }
   ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'image'
-    }
-  }
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     media: 'image'
+  //   }
+  // }
 }

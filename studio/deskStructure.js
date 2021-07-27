@@ -14,6 +14,21 @@ export const getDefaultDocumentNode = (props) => {
   if (props.schemaType === 'product') {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
+  if (props.schemaType === 'productCategory') {
+    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
+  }
+  if (props.schemaType === 'equipmentType') {
+    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
+  }
+  if (props.schemaType === 'about') {
+    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
+  }
+  if (props.schemaType === 'news') {
+    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
+  }
+  if (props.schemaType === 'service') {
+    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
+  }
   return S.document();
 };
 
@@ -45,6 +60,42 @@ export default () =>
             .id('doc-level')
             .title('Document level translations')
             .items([
+              S.listItem()
+                .title('Product Category')
+                .id('product-category-docs')
+                // .icon(PostIcon)
+                .schemaType('productCategory')
+                .child(
+                  S.documentList()
+                    .id('productCategory')
+                    .title('Product Category')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "productCategory" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'productCategory'
+                    })
+                ),
+
+                S.listItem()
+                .title('Equipment Type')
+                .id('equipment-type-docs')
+                // .icon(PostIcon)
+                .schemaType('equipmentType')
+                .child(
+                  S.documentList()
+                    .id('equipmentType')
+                    .title('Equipment Type')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "equipmentType" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'equipmentType'
+                    })
+                ),
+
               S.listItem()
                 .title('Product')
                 .id('product-docs')
