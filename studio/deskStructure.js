@@ -23,6 +23,9 @@ export const getDefaultDocumentNode = (props) => {
   if (props.schemaType === 'about') {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
+  if (props.schemaType === 'contact') {
+    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
+  }
   if (props.schemaType === 'news') {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
