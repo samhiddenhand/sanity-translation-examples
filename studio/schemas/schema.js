@@ -5,6 +5,7 @@ import richText from './objects/richText'
 import openGraph from './objects/openGraph'
 import captionImage from './objects/captionImage'
 import about from './documents/about'
+import contact from './documents/contact'
 import service from './documents/service'
 import news from './documents/news'
 import product from './documents/product'
@@ -39,6 +40,7 @@ export default createSchema({
       equipmentType,
       news,
       about,
+      contact,
       service
     ]))
 })

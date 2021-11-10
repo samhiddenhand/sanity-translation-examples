@@ -132,6 +132,26 @@ export default () =>
                     })
                 ),
 
+                ,
+
+                S.listItem()
+                .title('Contact')
+                .id('contact-docs')
+                // .icon(PostIcon)
+                .schemaType('contact')
+                .child(
+                  S.documentList()
+                    .id('contact')
+                    .title('Contact')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "contact" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'contact'
+                    })
+                ),
+
                 S.listItem()
                 .title('News')
                 .id('news-docs')
