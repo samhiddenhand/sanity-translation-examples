@@ -9,7 +9,6 @@ export default {
   // need to on a document-to-document bassis.
   i18n,
   initialValue: {
-    slug: 'site-headings',
     about: 'About',
     services: 'Services',
     contact: 'Contact',
@@ -51,8 +50,7 @@ export default {
     {
       title: 'Slug',
       name: 'slug',
-      type: 'slug',
-      readOnly: true
+      type: 'slug'
     },
   ],
   // preview: {
