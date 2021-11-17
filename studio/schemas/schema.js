@@ -11,6 +11,7 @@ import news from './documents/news'
 import product from './documents/product'
 import productCategory from './documents/product_category'
 import equipmentType from './documents/equipment_type'
+import siteHeading from './documents/site_heading'
 import { translateFields } from './fieldTranslation'
 
 export default createSchema({
@@ -35,6 +36,7 @@ export default createSchema({
     // set localize: true on any field level will
     // not be changed.
     .concat(translateFields([
+      siteHeading,
       product,
       productCategory,
       equipmentType,

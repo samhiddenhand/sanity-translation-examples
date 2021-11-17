@@ -11,6 +11,9 @@ import {
 } from 'react-icons/gr'
 
 export const getDefaultDocumentNode = (props) => {
+  if (props.schemaType === 'siteHeading') {
+    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
+  }
   if (props.schemaType === 'product') {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
@@ -78,6 +81,24 @@ export default () =>
                     .canHandleIntent((_name, params, _context) => {
                       // Assume we can handle all intents (actions) regarding post documents
                       return params.type === 'productCategory'
+                    })
+                ),
+
+                S.listItem()
+                .title('Site Headings')
+                .id('site-heading-docs')
+                // .icon(PostIcon)
+                .schemaType('siteHeading')
+                .child(
+                  S.documentList()
+                    .id('siteHeading')
+                    .title('Site Headings')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "siteHeading" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'siteHeading'
                     })
                 ),
 
