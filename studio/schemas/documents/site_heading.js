@@ -8,6 +8,15 @@ export default {
   // via the sanity-intl plugin. You can of course modify this object should you
   // need to on a document-to-document bassis.
   i18n,
+  initialValue: {
+    slug: 'site-headings',
+    about: 'About',
+    services: 'Services',
+    contact: 'Contact',
+    products: 'Products',
+    featured_product: 'Featured Product',
+    news: 'News'
+  },
   fields: [
     {
       title: 'About',
@@ -43,8 +52,7 @@ export default {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      readOnly: true,
-      initialValue: 'site-headings'
+      readOnly: true
     },
   ],
   // preview: {
