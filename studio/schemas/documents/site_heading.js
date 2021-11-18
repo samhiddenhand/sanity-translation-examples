@@ -42,6 +42,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Welcome To LPP',
+      name: 'welcome',
+      type: 'richText',
+      validation: Rule => Rule.required()
+    },
+    {
       title: '"Featured Product" Title (FR/EN)',
       name: 'featured_product',
       type: 'string',
