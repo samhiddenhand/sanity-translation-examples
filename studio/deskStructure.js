@@ -85,14 +85,14 @@ export default () =>
                 ),
 
                 S.listItem()
-                .title('Site Headings')
+                .title('Site Settings')
                 .id('site-heading-docs')
                 // .icon(PostIcon)
                 .schemaType('siteHeading')
                 .child(
                   S.documentList()
                     .id('siteHeading')
-                    .title('Site Headings')
+                    .title('Site Settings')
                     // Use a GROQ filter to get documents.
                     .filter('_type == "siteHeading" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })

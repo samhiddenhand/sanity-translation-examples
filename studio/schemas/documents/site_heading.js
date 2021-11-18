@@ -1,7 +1,7 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Site Heading',
+  title: 'Site Settings',
   name: 'siteHeading',
   type: 'document',
   // The next property enables full-document translation for this document
@@ -20,32 +20,44 @@ export default {
     {
       title: 'About',
       name: 'about',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Services',
       name: 'services',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Contact',
       name: 'contact',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Products',
       name: 'products',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
-      title: 'Featured Product',
+      title: '"Featured Product" Title (FR/EN)',
       name: 'featured_product',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Featured Product Information',
+      name: 'featured_product_image',
+      type: 'captionImage',
+      validation: Rule => Rule.required()
     },
     {
       title: 'News',
       name: 'news',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Slug',
@@ -53,10 +65,9 @@ export default {
       type: 'slug'
     },
   ],
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     media: 'image'
-  //   }
-  // }
+  preview: {
+    select: {
+      title: 'Site Settings'
+    }
+  }
 }
