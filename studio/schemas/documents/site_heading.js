@@ -66,6 +66,16 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'homepageVideo',
+      title: 'Homepage Video Override (delete to restore default)',
+      type: 'file'
+     },
+     {
+      name: 'innerpageVideo',
+      title: 'Inner Pages Video Override (delete to restore default)',
+      type: 'file'
+     },
+    {
       title: 'Slug',
       name: 'slug',
       type: 'slug'
